@@ -1,7 +1,7 @@
 import {Fragment, useState, useEffect} from 'react';
 import axios from "axios";
 import QuoteCard from "./QuoteCard";
-import { LIKED_QUOTES_KEY} from "./Constants";
+import { LIKED_QUOTES_KEY} from "./constants";
 import logo from "./logo.svg";
 import {Link} from "react-router-dom";
 
@@ -99,15 +99,15 @@ function Home() {
     return (
         <div className="home">
             <header className="App-header">
-                <img src={logo} className="App-logo" alt="logo" />
-                <Link to="/quotes-collection">My Quote Collection</Link>
+                {/*<img src={logo} className="App-logo" alt="logo" />*/}
+                <h1 style={{fontStyle: "italic"}}>✨ Inspo-Quote ✨</h1>
                 <Fragment>
                     {
                         (dataLoaded && quotes.length !== 0) &&
                         <QuoteCard showActionButtons={true} changeQuote={changeQuote} likeQuote={toggleLikeBtn}
                                    quoteObj={currentDisplayedQuote}/>
-                        // <QuoteCard text={currentDisplayedQuote.text} author={currentDisplayedQuote.author}</QuoteCard>
                     }
+                    <Link style={{color:"white"}} to="/quotes-collection">View Liked Quotes</Link>
                 </Fragment>
             </header>
         </div>

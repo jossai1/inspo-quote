@@ -1,5 +1,5 @@
 import {Fragment, useState, useEffect} from 'react';
-import {LIKED_QUOTES_KEY} from "./Constants";
+import {LIKED_QUOTES_KEY} from "./constants";
 import QuoteCard from "./QuoteCard";
 import {Link} from "react-router-dom";
 
@@ -61,6 +61,7 @@ function QuoteCollection() {
 
     return (
         <Fragment>
+            <h1>Liked Quotes ❤️</h1>
             <Link to="/">Home</Link>
             {renderLikedQuotes()}
         </Fragment>
