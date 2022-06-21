@@ -52,7 +52,7 @@ function Home() {
     useEffect(() => {
         const id = setInterval(() => {
             updateDisplayedQuote(quotes);
-        }, 5000);
+        }, 20000);
         return () => {
             clearInterval(id);
         }
