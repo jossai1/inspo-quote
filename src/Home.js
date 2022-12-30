@@ -1,8 +1,7 @@
 import {Fragment, useState, useEffect} from 'react';
 import axios from "axios";
 import QuoteCard from "./QuoteCard";
-import { LIKED_QUOTES_KEY} from "./constants";
-import logo from "./logo.svg";
+import {LIKED_QUOTES_KEY} from "./constants";
 import {Link} from "react-router-dom";
 
 function Home() {
@@ -18,22 +17,11 @@ function Home() {
                 return Object.assign({id: index + 1, liked: false}, obj);
             });
             setQuotes(formattedQuotes);
-            // console.log(formattedQuotes)
             updateDisplayedQuote(formattedQuotes); //data fetched now we need to set the initial quote to display - manually first..else we have to wait 5 secs for timer to kick off
             setDataLoaded(true);
-            // setCurrentDisplayedQuote({...currentDisplayedQuote, text: quotes[0].text, author: quotes[0].author});
         }
 
         fetchQuotes();
-        // setCurrentDisplayedQuote({
-        //     ...currentDisplayedQuote,
-        //     ...quotes[0]
-        // });
-        // setCurrentDisplayedQuote(response.data[0]);
-        // console.log(currentDisplayedQuote);
-        // const indexOfQuoteToDisplay = Math.floor(Math.random() * (quotes.length-1)) + 1;
-        // console.log(indexOfQuoteToDisplay);
-        // console.log(quotes);
     }, []);
 
     const generateRandomNumber = (min, max) => {
@@ -107,7 +95,7 @@ function Home() {
                         <QuoteCard showActionButtons={true} changeQuote={changeQuote} likeQuote={toggleLikeBtn}
                                    quoteObj={currentDisplayedQuote}/>
                     }
-                    <Link style={{color:"white"}} to="/quotes-collection">View Liked Quotes</Link>
+                    <Link style={{color: "white"}} to="/quotes-collection">View Liked Quotes</Link>
                 </Fragment>
             </header>
         </div>

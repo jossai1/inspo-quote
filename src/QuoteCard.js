@@ -18,7 +18,7 @@ function QuoteCard(props) {
             <div style={props.customStyles || cardStyles}>
                 <h1>#{props.quoteObj.id}</h1>
                 <h2>{props.quoteObj.text}</h2>
-                <cite>- {props.quoteObj.author}</cite>
+                {props.quoteObj.author && <cite>- {props.quoteObj.author}</cite>}
                 <br/>
                 {
                     props.showActionButtons &&
